@@ -1,47 +1,40 @@
 [package]
-name = "template"
-description = "A Bevy + mdbook enabled template repo to build on."
-version = "0.0.0"
-authors = ["Leafwing Studios"]
-homepage = "https://leafwing-studios.com"
-repository = "https://github.com/leafwing-studios/template-repo"
-license = "MIT OR Apache-2.0"
+name = "definitely_not_bevy_ui"
+version = "0.1.0"
 edition = "2021"
-categories = ["games", "game-development"]
-keywords = ["bevy"]
-exclude = ["assets/**/*", "tools/**/*", ".github/**/*"]
-resolver = "2"
+description = "An experimental ECS-driven UI framework for Bevy Engine"
+repository = "https://github.com/Leafwing-Studios/definitely_not_bevy_ui"
+license = "MIT OR Apache-2.0"
+keywords = ["bevy", "ui"]
 
-[profile.dev]
-opt-level = 3
+[dependencies]
+# bevy
+bevy_app = { version = "0.7" }
+bevy_asset = {  version = "0.7" }
+bevy_core = {version = "0.7" }
+bevy_core_pipeline = { version = "0.7" }
+bevy_ecs = { version = "0.7" }
+bevy_hierarchy = { version = "0.7" }
+bevy_input = { version = "0.7" }
+bevy_log = { version = "0.7" }
+bevy_math = { version = "0.7" }
+bevy_reflect = { version = "0.7", features = ["bevy"] }
+bevy_render = { version = "0.7" }
+bevy_sprite = { version = "0.7" }
+bevy_text = { version = "0.7" }
+bevy_transform = { version = "0.7" }
+bevy_window = { version = "0.7" }
+bevy_utils = { version = "0.7" }
+
+# other
+stretch = "0.3.2"
+serde = { version = "1", features = ["derive"] }
+smallvec = { version = "1.6", features = ["union", "const_generics"] }
+bytemuck = { version = "1.5", features = ["derive"] }
 
 [workspace]
 members = ["./", "tools/ci"]
 
-[dependencies]
-bevy = { version = "0.6", default-features = false, features = ["dynamic"]}
-
-[patch.crates-io]
-# We can override the bevy version with remote or local versions
-# This method causes less pain to downstream users trying to work off your revisions
-#bevy = { git = "https://github.com/bevyengine/bevy" }
-#bevy = { path = "../bevy" }
-
 [dev-dependencies]
-criterion = "0.3"
-# We can use a different feature set of Bevy for our library vs our examples and tests
-bevy = { version = "0.6", default-features = false}
-
-
-[lib]
-name = "template_lib"
-path = "src/lib.rs"
-
-[[bin]]
-name = "template_bin"
-path = "src/main.rs"
-
-[[bench]]
-name = "entity_spawning"
-path = "benches/entity_spawning.rs"
-harness = false
+bevy = { version = "0.7" } 
+rand = { version = "0.8" }

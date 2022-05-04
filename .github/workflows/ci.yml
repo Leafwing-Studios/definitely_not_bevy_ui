@@ -23,7 +23,7 @@ jobs:
           key: ${{ runner.os }}-cargo-ci-${{ hashFiles('**/Cargo.toml') }}
       - uses: actions-rs/toolchain@v1
         with:
-          toolchain: nightly
+          toolchain: stable
           components: rustfmt, clippy
           override: true
       - name: CI job
@@ -33,20 +33,6 @@ jobs:
         run: cargo doc --no-deps
         env:
           RUSTDOCFLAGS: -Dwarnings
-
-  mdbook:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          mdbook-version: 'latest'
-
-      - run: mdbook build
 
   check-markdown-links:
     runs-on: ubuntu-latest
