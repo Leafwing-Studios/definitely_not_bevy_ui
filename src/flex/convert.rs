@@ -1,11 +1,12 @@
 use crate::{
     AlignContent, AlignItems, AlignSelf, Direction, Display, FlexDirection, FlexWrap,
-    JustifyContent, PositionType, Size, Style, UiRect, Val,
+    JustifyContent, PositionType, Style, Val,
 };
+use bevy_math::{Rect, Size};
 
 pub fn from_rect(
     scale_factor: f64,
-    rect: UiRect<Val>,
+    rect: Rect<Val>,
 ) -> stretch::geometry::Rect<stretch::style::Dimension> {
     stretch::geometry::Rect {
         start: from_val(scale_factor, rect.left),
