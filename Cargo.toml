@@ -1,6 +1,6 @@
 [package]
 name = "definitely_not_bevy_ui"
-version = "0.0"
+version = "0.1.0"
 edition = "2021"
 description = "An experimental ECS-driven UI framework for Bevy Engine"
 repository = "https://github.com/Leafwing-Studios/definitely_not_bevy_ui"
@@ -9,21 +9,21 @@ keywords = ["bevy", "ui"]
 
 [dependencies]
 # bevy
-bevy_app = { version = "0.8.0-dev" }
-bevy_asset = {  version = "0.8.0-dev" }
-bevy_core_pipeline = { version = "0.8.0-dev" }
-bevy_ecs = { version = "0.8.0-dev" }
-bevy_hierarchy = { version = "0.8.0-dev" }
-bevy_input = { version = "0.8.0-dev" }
-bevy_log = { version = "0.8.0-dev" }
-bevy_math = { version = "0.8.0-dev" }
-bevy_reflect = { version = "0.8.0-dev", features = ["bevy"] }
-bevy_render = { version = "0.8.0-dev" }
-bevy_sprite = { version = "0.8.0-dev" }
-bevy_text = { version = "0.8.0-dev" }
-bevy_transform = { version = "0.8.0-dev" }
-bevy_window = { version = "0.8.0-dev" }
-bevy_utils = { version = "0.8.0-dev" }
+bevy_app = { version = "0.7" }
+bevy_asset = {  version = "0.7" }
+bevy_core_pipeline = { version = "0.7" }
+bevy_ecs = { version = "0.7" }
+bevy_hierarchy = { version = "0.7" }
+bevy_input = { version = "0.7" }
+bevy_log = { version = "0.7" }
+bevy_math = { version = "0.7" }
+bevy_reflect = { version = "0.7", features = ["bevy"] }
+bevy_render = { version = "0.7" }
+bevy_sprite = { version = "0.7" }
+bevy_text = { version = "0.7" }
+bevy_transform = { version = "0.7" }
+bevy_window = { version = "0.7" }
+bevy_utils = { version = "0.7" }
 
 # other
 stretch = "0.3.2"
