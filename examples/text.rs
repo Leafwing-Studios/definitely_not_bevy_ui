@@ -1,7 +1,17 @@
 use bevy::{
+    app::App,
+    asset::AssetServer,
+    core::Time,
     diagnostic::{Diagnostics, FrameTimeDiagnosticsPlugin},
-    prelude::*,
+    ecs::prelude::*,
+    math::Rect,
+    render::color::Color,
+    text::prelude::*,
+    utils::default,
+    DefaultPlugins,
 };
+
+use definitely_not_bevy_ui::prelude::*;
 
 /// This example illustrates how to create UI text and update it in a system. It displays the
 /// current FPS in the top left corner, as well as text that changes colour in the bottom right.
@@ -33,7 +43,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
             style: Style {
                 align_self: AlignSelf::FlexEnd,
                 position_type: PositionType::Absolute,
-                position: UiRect {
+                position: Rect {
                     bottom: Val::Px(5.0),
                     right: Val::Px(15.0),
                     ..default()

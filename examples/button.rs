@@ -1,4 +1,17 @@
-use bevy::{prelude::*, winit::WinitSettings};
+use definitely_not_bevy_ui::prelude::*;
+
+use bevy::{
+    app::App,
+    asset::AssetServer,
+    ecs::prelude::*,
+    hierarchy::{BuildChildren, Children},
+    math::{Rect, Size},
+    render::color::Color,
+    text::{Text, TextStyle},
+    utils::default,
+    winit::WinitSettings,
+    DefaultPlugins,
+};
 
 /// This example illustrates how to create a button that changes color and text based on its
 /// interaction state.
@@ -50,7 +63,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
             style: Style {
                 size: Size::new(Val::Px(150.0), Val::Px(65.0)),
                 // center button
-                margin: UiRect::all(Val::Auto),
+                margin: Rect::all(Val::Auto),
                 // horizontally center child text
                 justify_content: JustifyContent::Center,
                 // vertically center child text

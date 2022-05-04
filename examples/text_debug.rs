@@ -1,8 +1,18 @@
 use bevy::{
+    app::App,
+    asset::AssetServer,
+    core::Time,
     diagnostic::{Diagnostics, FrameTimeDiagnosticsPlugin},
-    prelude::*,
-    window::PresentMode,
+    math::{Rect, Size},
+    render::color::Color,
+    text::prelude::*,
+    utils::default,
+    window::{PresentMode, WindowDescriptor},
+    DefaultPlugins,
 };
+
+use bevy::ecs::prelude::*;
+use definitely_not_bevy_ui::prelude::*;
 
 /// This example is for debugging text layout
 fn main() {
@@ -28,7 +38,7 @@ fn infotext_system(mut commands: Commands, asset_server: Res<AssetServer>) {
         style: Style {
             align_self: AlignSelf::FlexEnd,
             position_type: PositionType::Absolute,
-            position: UiRect {
+            position: Rect {
                 top: Val::Px(5.0),
                 left: Val::Px(15.0),
                 ..default()
@@ -50,7 +60,7 @@ fn infotext_system(mut commands: Commands, asset_server: Res<AssetServer>) {
         style: Style {
             align_self: AlignSelf::FlexEnd,
             position_type: PositionType::Absolute,
-            position: UiRect {
+            position: Rect {
                 top: Val::Px(5.0),
                 right: Val::Px(15.0),
                 ..default()
@@ -80,7 +90,7 @@ fn infotext_system(mut commands: Commands, asset_server: Res<AssetServer>) {
             style: Style {
                 align_self: AlignSelf::FlexEnd,
                 position_type: PositionType::Absolute,
-                position: UiRect {
+                position: Rect {
                     bottom: Val::Px(5.0),
                     right: Val::Px(15.0),
                     ..default()
@@ -147,7 +157,7 @@ fn infotext_system(mut commands: Commands, asset_server: Res<AssetServer>) {
         style: Style {
             align_self: AlignSelf::FlexEnd,
             position_type: PositionType::Absolute,
-            position: UiRect {
+            position: Rect {
                 bottom: Val::Px(5.0),
                 left: Val::Px(15.0),
                 ..default()

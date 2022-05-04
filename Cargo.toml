@@ -34,3 +34,7 @@ bytemuck = { version = "1.5", features = ["derive"] }
 
 [workspace]
 members = ["./", "tools/ci"]
+
+[dev-dependencies]
+bevy = { version = "0.7" } 
+rand = { version = "0.8" }
